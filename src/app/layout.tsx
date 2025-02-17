@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: '동네냥이',
-  description: '동네 고양이 SNS 서비스',
+  description: '동네 길고양이 사진을 공유할 수 있는 SNS 서비스',
 };
 
 const notoSans = Noto_Sans({
