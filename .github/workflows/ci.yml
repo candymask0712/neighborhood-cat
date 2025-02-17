@@ -27,6 +27,22 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: 'pnpm'
 
+      - name: Cache pnpm Store
+        uses: actions/cache@v4
+        with:
+            path: ~/.pnpm-store
+            key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+            restore-keys: |
+              pnpm-store-${{ runner.os }}-
+
+      - name: Cache Next.js Build
+        uses: actions/cache@v4
+        with:
+          path: .next/cache  # Next.js 빌드 캐시 저장
+          key: nextjs-build-${{ runner.os }}-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx') }}
+          restore-keys: |
+              nextjs-build-${{ runner.os }}-
+
       - name: Install Dependencies
         run: pnpm install
 
@@ -38,11 +54,3 @@ jobs:
 
       - name: Run Tests
         run: pnpm test
-
-      - name: Cache pnpm Store
-        uses: actions/cache@v4
-        with:
-          path: ~/.pnpm-store
-          key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            pnpm-store-${{ runner.os }}-
