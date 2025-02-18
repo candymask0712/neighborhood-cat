@@ -1,26 +1,30 @@
-import { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
-import "./globals.css";
+import { Metadata } from 'next'
+import './globals.css'
+import { COMMON_KEYWORDS, COMMON_TEXT } from '@/constants/common'
+import { Noto_Sans_KR } from 'next/font/google'
 
 export const metadata: Metadata = {
-  title: '동네냥이',
-  description: '동네 길고양이 사진을 공유할 수 있는 SNS 서비스',
-};
+  title: COMMON_KEYWORDS.APP_NAME,
+  description: COMMON_TEXT.META.DESCRIPTION,
+  keywords: COMMON_TEXT.META.KEYWORDS,
+}
 
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  weight: ["100", "400", "700", "900"],
-});
- export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+const notoSansKr = Noto_Sans_KR({
+  // Noto_Sans_KR은 subset으로 한국어 미지원
+  preload: false,
+  weight: ['100', '400', '700', '900'],
+})
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
-      <body className={`${notoSans.className} antialiased`}>
-      <div className="flex justify-center bg-gray-200 min-h-screen">
-          <div className="w-full max-w-md bg-white">
-            {children}
-          </div>
+      <body className={`${notoSansKr.className} antialiased`}>
+        <div className="flex justify-center bg-gray-200 min-h-screen">
+          <div className="w-full max-w-md bg-white">{children}</div>
         </div>
       </body>
     </html>
-  );
+  )
 }

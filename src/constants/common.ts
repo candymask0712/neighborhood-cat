@@ -1,0 +1,15 @@
+export const COMMON_KEYWORDS = {
+  APP_NAME: '동네냥이',
+  NEIGHBORHOOD_CAT: '길고양이',
+}
+
+export const COMMON_TEXT = {
+  TITLE: {
+    HOME: `${COMMON_KEYWORDS.APP_NAME} - 우리 동네 ${COMMON_KEYWORDS.NEIGHBORHOOD_CAT} 관리`,
+    ABOUT: `${COMMON_KEYWORDS.APP_NAME} 소개`,
+  },
+  META: {
+    DESCRIPTION: `우리 동네 ${COMMON_KEYWORDS.NEIGHBORHOOD_CAT}들을 함께 관리하고 보호해요`,
+    KEYWORDS: `${COMMON_KEYWORDS.NEIGHBORHOOD_CAT}, 동물보호, 캣맘, 캣대디, ${COMMON_KEYWORDS.APP_NAME}`,
+  },
+}
