@@ -13,6 +13,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "next": "14.2.24",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -24,8 +25,8 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.24",
+    "eslint": "^9.20.1",
+    "eslint-config-next": "15.1.7",
     "husky": "^8.0.3",
     "jsdom": "^26.0.0",
     "lint-staged": "^15.4.3",
