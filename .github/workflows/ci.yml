@@ -28,7 +28,8 @@ jobs:
         run: npm install -g pnpm@9.9.0
 
       - name: remove cache
-        run: pnpm store prune
+        run: rm -rf ~/.pnpm-store 
+             rm -rf node_modules pnpm-lock.yaml
 
       - name: Setup Node.js & pnpm
         uses: actions/setup-node@v4
