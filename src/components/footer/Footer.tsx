@@ -1,4 +1,3 @@
-import LogoImage from '@/assets/images/logo.png'
 import NavMenu from './NavMenu'
 
 import { MENUS } from '@/constants/nav'
