@@ -20,9 +20,15 @@ jobs:
 
       - name: test
         run: cat tsconfig.json
-        
+
+      - name: test2
+        run: ls -l src/assets/images/
+
       - name: Install pnpm
         run: npm install -g pnpm@9.9.0
+
+      - name: remove cache
+        run: pnpm store prune
 
       - name: Setup Node.js & pnpm
         uses: actions/setup-node@v4
