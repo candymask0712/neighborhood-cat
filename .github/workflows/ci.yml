@@ -25,23 +25,23 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-          cache: 'pnpm'
+          # cache: 'pnpm'
 
-      - name: Cache pnpm Store
-        uses: actions/cache@v4
-        with:
-            path: ~/.pnpm-store
-            key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
-            restore-keys: |
-              pnpm-store-${{ runner.os }}-
+      # - name: Cache pnpm Store
+      #   uses: actions/cache@v4
+      #   with:
+      #       path: ~/.pnpm-store
+      #       key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+      #       restore-keys: |
+      #         pnpm-store-${{ runner.os }}-
 
-      - name: Cache Next.js Build
-        uses: actions/cache@v4
-        with:
-          path: .next/cache
-          key: nextjs-build-${{ runner.os }}-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx') }}
-          restore-keys: |
-              nextjs-build-${{ runner.os }}-
+      # - name: Cache Next.js Build
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: .next/cache
+      #     key: nextjs-build-${{ runner.os }}-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx') }}
+      #     restore-keys: |
+      #         nextjs-build-${{ runner.os }}-
 
       - name: Install Dependencies
         run: pnpm install
