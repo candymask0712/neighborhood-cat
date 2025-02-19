@@ -54,7 +54,7 @@ jobs:
       #         nextjs-build-${{ runner.os }}-
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --force 
 
       - name: Lint Check
         run: pnpm lint
