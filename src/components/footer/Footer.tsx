@@ -8,7 +8,9 @@ import {
   CloudArrowUpIcon,
   MapPinIcon,
   UserIcon,
+  RocketLaunchIcon,
 } from '@heroicons/react/24/outline'
+
 import { ReactElement } from 'react'
 
 const iconSize = 'w-6 h-6'
@@ -33,7 +35,7 @@ const MENU_ASSETS: Record<string, { icon: ReactElement }> = {
 
 const NAV_MENUS = Object.values(MENUS).map((menu) => ({
   ...menu,
-  icon: MENU_ASSETS[menu.href]?.icon || LogoImage,
+  icon: MENU_ASSETS[menu.href]?.icon || RocketLaunchIcon,
   alt: `${menu.label} 메뉴 아이콘`,
 }))
 
