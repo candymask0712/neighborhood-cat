@@ -17,7 +17,9 @@ const notoSansKr = Noto_Sans_KR({
   weight: ['100', '400', '700', '900'],
 })
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
       <body className={`${notoSansKr.className} antialiased`}>
