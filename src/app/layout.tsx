@@ -22,11 +22,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
-      <body className={`${notoSansKr.className} antialiased`}>
+      <body
+        className={`${notoSansKr.className} antialiased h-screen overflow-y-auto overflow-x-hidden`}
+      >
         <div className="flex justify-center bg-gray-200 min-h-screen">
           <div className="w-full max-w-md bg-white">
             <Header />
-            {children}
+            <main className="h-[calc(100vh-4rem)] overflow-auto">
+              {children}
+            </main>
             <Footer />
           </div>
         </div>
