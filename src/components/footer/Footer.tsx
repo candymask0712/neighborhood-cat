@@ -19,22 +19,24 @@ const MENU_ASSETS: Record<string, { icon: ReactElement }> = {
     icon: <HomeIcon className={iconSize} />,
   },
   [MENUS.search.href]: {
-    icon: <MagnifyingGlassIcon className={iconSize}  />,
+    icon: <MagnifyingGlassIcon className={iconSize} />,
   },
   [MENUS.upload.href]: {
-    icon: <CloudArrowUpIcon className={iconSize}  />,
+    icon: <CloudArrowUpIcon className={iconSize} />,
   },
   [MENUS.nearby.href]: {
     icon: <MapPinIcon className={iconSize} />,
   },
   [MENUS.mypage.href]: {
-    icon: <UserIcon className={iconSize}  />,
+    icon: <UserIcon className={iconSize} />,
   },
 }
 
 const NAV_MENUS = Object.values(MENUS).map((menu) => ({
   ...menu,
-  icon: MENU_ASSETS[menu.href]?.icon || <RocketLaunchIcon className={iconSize} />,
+  icon: MENU_ASSETS[menu.href]?.icon || (
+    <RocketLaunchIcon className={iconSize} />
+  ),
   alt: `${menu.label} 메뉴 아이콘`,
 }))
 
